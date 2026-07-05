@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Smart DT Guide</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+
+    <aside class="sidebar">
+        <div>
+            <div class="sidebar-logo"><img src="assets/brand/logo-full.png" alt="Smart DT Guide" onerror="this.style.display='none'"></div>
+            <ul class="sidebar-nav">
+                <li class="active"><a href="dashboard.html"><img src="assets/navigation/nav-home.png" alt=""> Dashboard</a></li>
+                <li><a href="#"><img src="assets/navigation/nav-journey.png" alt=""> DT Journey</a></li>
+                <li><a href="#"><img src="assets/navigation/nav-templates.png" alt=""> Templates</a></li>
+                <li><a href="#"><img src="assets/navigation/nav-profile.png" alt=""> My Profile</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-footer">CAMP21 · Synergising Literacies 2026</div>
+    </aside>
+
+    <main class="main">
+
+        <!-- Top Bar (mobile feel) -->
+        <div class="top-bar">
+            <div class="top-bar-brand">
+                <div class="top-bar-logo">DT</div>
+                <h2>Smart DT Guide</h2>
+            </div>
+            <span style="font-size:20px;opacity:.5;">🔔</span>
+        </div>
+
+        <!-- Phase Hero Card -->
+        <div class="phase-hero">
+            <img src="assets/phases/emphatise.png" alt="" class="phase-icon-float" onerror="this.style.display='none'">
+            <span class="label">Current phase</span>
+            <h2>Phase 01<br>Empathise</h2>
+            <div class="pct">60% complete</div>
+            <div class="bar"><div class="bar-fill" style="width:60%;"></div></div>
+            <button class="btn-pill btn-pill-white" onclick="location.href='#'">
+                Continue Phase <span class="arrow">→</span>
+            </button>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="qa-grid">
+            <a href="#" class="qa-btn" style="background:var(--qa-green);">
+                <span class="qa-left"><img src="assets/icons/my-submissions.png" alt="" onerror="this.style.display='none'"> My Submissions</span>
+                <span class="qa-arrow">→</span>
+            </a>
+            <a href="#" class="qa-btn" style="background:var(--bg-card);border:1px solid var(--border);">
+                <span class="qa-left"><img src="assets/icons/test.png" alt="" onerror="this.style.display='none'"> Quiz</span>
+                <span class="qa-arrow">→</span>
+            </a>
+            <a href="#" class="qa-btn" style="background:var(--qa-teal);">
+                <span class="qa-left"><img src="assets/icons/badges.png" alt="" onerror="this.style.display='none'"> Badges</span>
+                <span class="qa-arrow">→</span>
+            </a>
+            <a href="#" class="qa-btn" style="background:var(--bg-card);border:1px solid var(--border);">
+                <span class="qa-left"><img src="assets/icons/print-pdf.png" alt="" onerror="this.style.display='none'"> Print PDF</span>
+                <span class="qa-arrow">→</span>
+            </a>
+        </div>
+
+        <!-- Templates -->
+        <div class="section-label">Templates <a href="#">View all →</a></div>
+
+        <a href="#" class="tpl-item">
+            <div class="tpl-badge b-teal">T01</div>
+            <span class="tpl-name">POEMS</span>
+            <span class="tpl-dot green"></span>
+            <span class="tpl-arrow">›</span>
+        </a>
+        <a href="#" class="tpl-item">
+            <div class="tpl-badge b-teal">T02</div>
+            <span class="tpl-name">Interview</span>
+            <span class="tpl-dot green"></span>
+            <span class="tpl-arrow">›</span>
+        </a>
+        <a href="#" class="tpl-item">
+            <div class="tpl-badge b-teal">T03</div>
+            <span class="tpl-name">Transcript</span>
+            <span class="tpl-dot amber"></span>
+            <span class="tpl-arrow">›</span>
+        </a>
+        <a href="#" class="tpl-item">
+            <div class="tpl-badge b-teal">T04</div>
+            <span class="tpl-name">Empathy Map</span>
+            <span class="tpl-dot grey"></span>
+            <span class="tpl-arrow">›</span>
+        </a>
+
+        <!-- Bottom Nav -->
+    </main>
+
+    <nav class="mobile-nav">
+        <a href="dashboard.html" class="active"><img src="assets/navigation/nav-home.png" alt=""><span>Home</span></a>
+        <a href="#"><img src="assets/navigation/nav-journey.png" alt=""><span>Journey</span></a>
+        <a href="#"><img src="assets/navigation/nav-templates.png" alt=""><span>Templates</span></a>
+        <a href="#"><img src="assets/navigation/nav-profile.png" alt=""><span>Profile</span></a>
+    </nav>
+
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const fill = document.querySelector('.bar-fill');
+    if (fill) {
+        const t = fill.style.width;
+        fill.style.width = '0%';
+        fill.style.transition = 'width 1s cubic-bezier(0.25,0.8,0.25,1)';
+        setTimeout(() => fill.style.width = t, 200);
+    }
+});
+</script>
+</body>
+</html>

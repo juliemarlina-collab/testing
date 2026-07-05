@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI DT Buddy | Smart DT Guide</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+
+    <aside class="sidebar">
+        <div>
+            <div class="sidebar-logo"><img src="assets/brand/logo-full.png" alt="" onerror="this.style.display='none'"></div>
+            <ul class="sidebar-nav">
+                <li><a href="dashboard.html"><img src="assets/navigation/nav-home.png" alt=""> Dashboard</a></li>
+                <li class="active"><a href="#"><img src="assets/navigation/nav-journey.png" alt=""> DT Journey</a></li>
+                <li><a href="#"><img src="assets/navigation/nav-templates.png" alt=""> Templates</a></li>
+                <li><a href="#"><img src="assets/navigation/nav-profile.png" alt=""> My Profile</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-footer">CAMP21 · Synergising Literacies 2026</div>
+    </aside>
+
+    <main class="main">
+
+        <!-- Header -->
+        <div class="top-bar">
+            <div class="top-bar-brand">
+                <a href="phase-complete.html" style="font-size:20px;opacity:.5;">←</a>
+                <h2>AI DT Buddy</h2>
+            </div>
+            <span style="font-size:18px;">✦</span>
+        </div>
+
+        <h3 style="font-size:20px;margin-bottom:4px;">Your insights</h3>
+        <p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px;">AI summary from your Empathise work</p>
+
+        <!-- Insight Cards (colored, expandable) -->
+        <div class="insight-card" style="background:var(--define-glow);color:#fff;" onclick="this.querySelector('.insight-expanded')?.classList.toggle('hidden')">
+            <div class="insight-icon" style="background:var(--define);color:#fff;">📉</div>
+            <div class="insight-text">
+                <h4>Uncertainty</h4>
+                <p>Medium</p>
+            </div>
+            <span class="insight-arrow">⌄</span>
+        </div>
+
+        <div class="insight-card" style="background:var(--empathise-glow);color:#fff;" onclick="this.querySelector('.insight-expanded')?.classList.toggle('hidden')">
+            <div class="insight-icon" style="background:var(--empathise);color:#fff;">❓</div>
+            <div class="insight-text">
+                <h4>Info unclear</h4>
+                <p>High</p>
+            </div>
+            <span class="insight-arrow">⌄</span>
+        </div>
+
+        <!-- Expanded card example -->
+        <div class="insight-card" style="background:var(--prototype);color:#000;flex-wrap:wrap;" id="needsCard" onclick="document.getElementById('needsExpanded').classList.toggle('hidden')">
+            <div class="insight-icon" style="background:rgba(0,0,0,.15);color:#000;">⚠️</div>
+            <div class="insight-text">
+                <h4 style="color:#000;">Need updates</h4>
+                <p style="color:rgba(0,0,0,.6);">High</p>
+            </div>
+            <span class="insight-arrow" style="color:#000;">⌃</span>
+            <div class="insight-expanded" id="needsExpanded" style="width:100%;background:rgba(0,0,0,.08);color:#000;">
+                <strong>Opportunity</strong><br>
+                HMW help users get timely updates without having to follow up?
+            </div>
+        </div>
+
+        <div class="insight-card" style="background:var(--define-glow);color:#fff;" onclick="this.querySelector('.insight-expanded')?.classList.toggle('hidden')">
+            <div class="insight-icon" style="background:var(--define);color:#fff;">💜</div>
+            <div class="insight-text">
+                <h4>Stress while waiting</h4>
+                <p>Medium</p>
+            </div>
+            <span class="insight-arrow">⌄</span>
+        </div>
+
+        <!-- CTA -->
+        <a href="#" class="btn-big" style="background:var(--empathise);color:#000;margin-top:16px;">
+            View Recommendations <span class="arrow">→</span>
+        </a>
+
+    </main>
+
+    <nav class="mobile-nav">
+        <a href="dashboard.html"><img src="assets/navigation/nav-home.png" alt=""><span>Home</span></a>
+        <a href="#" class="active"><img src="assets/navigation/nav-journey.png" alt=""><span>Journey</span></a>
+        <a href="#"><img src="assets/navigation/nav-templates.png" alt=""><span>Templates</span></a>
+        <a href="#"><img src="assets/navigation/nav-profile.png" alt=""><span>Profile</span></a>
+    </nav>
+
+</div>
+
+<style>.hidden { display:none !important; }</style>
+</body>
+</html>
