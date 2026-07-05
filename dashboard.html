@@ -51,7 +51,7 @@
                 <span class="qa-left"><img src="assets/icons/my-submissions.png" alt="" onerror="this.style.display='none'"> My Submissions</span>
                 <span class="qa-arrow">→</span>
             </a>
-            <a href="#" class="qa-btn" style="background:var(--bg-card);border:1px solid var(--border);">
+            <a href="#" class="qa-btn qa-glass">
                 <span class="qa-left"><img src="assets/icons/test.png" alt="" onerror="this.style.display='none'"> Quiz</span>
                 <span class="qa-arrow">→</span>
             </a>
@@ -59,7 +59,7 @@
                 <span class="qa-left"><img src="assets/icons/badges.png" alt="" onerror="this.style.display='none'"> Badges</span>
                 <span class="qa-arrow">→</span>
             </a>
-            <a href="#" class="qa-btn" style="background:var(--bg-card);border:1px solid var(--border);">
+            <a href="#" class="qa-btn qa-glass">
                 <span class="qa-left"><img src="assets/icons/print-pdf.png" alt="" onerror="this.style.display='none'"> Print PDF</span>
                 <span class="qa-arrow">→</span>
             </a>
@@ -105,16 +105,6 @@
 
 </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const fill = document.querySelector('.bar-fill');
-    if (fill) {
-        const t = fill.style.width;
-        fill.style.width = '0%';
-        fill.style.transition = 'width 1s cubic-bezier(0.25,0.8,0.25,1)';
-        setTimeout(() => fill.style.width = t, 200);
-    }
-});
-</script>
+<script src="js/smartdt.js"></script>
 </body>
 </html>
