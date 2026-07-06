@@ -6,79 +6,308 @@
   <title>Smart DT Guide | Welcome</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#070B14;
-      --panel:#111827;
-      --panel2:#151D35;
-      --text:#F8FAFF;
-      --muted:#AEB7D0;
-      --blue:#3D63FF;
-      --violet:#6B4DFF;
-      --magenta:#FF4FCB;
-      --teal:#21D4C2;
-      --yellow:#FFC83D;
-      --green:#8DFF3F;
-      --line:rgba(255,255,255,.12);
+    :root {
+      --bg: #070B14;
+      --panel: #111827;
+      --panel2: #151D35;
+      --text: #F8FAFF;
+      --muted: #AEB7D0;
+      --blue: #3D63FF;
+      --violet: #6B4DFF;
+      --magenta: #FF4FCB;
+      --teal: #21D4C2;
+      --yellow: #FFC83D;
+      --green: #8DFF3F;
+      --line: rgba(255,255,255,.12);
     }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{min-height:100vh;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);overflow:hidden}
-    .page{
-      min-height:100vh;display:grid;place-items:center;padding:28px;
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body { 
+      min-height: 100vh; 
+      font-family: Inter, system-ui, sans-serif; 
+      background: var(--bg); 
+      color: var(--text); 
+      overflow-x: hidden;
+    }
+    
+    .page {
+      min-height: 100vh; 
+      display: grid; 
+      place-items: center; 
+      padding: 28px;
+      position: relative;
+      z-index: 1;
       background:
-        radial-gradient(circle at 18% 15%, rgba(107,77,255,.36), transparent 28%),
-        radial-gradient(circle at 88% 82%, rgba(255,79,203,.24), transparent 30%),
-        radial-gradient(circle at 55% 10%, rgba(33,212,194,.12), transparent 36%),
+        radial-gradient(circle at 50% 50%, rgba(11, 16, 34, 0.6), transparent),
         linear-gradient(135deg,#050816 0%,#0B1022 48%,#12071F 100%);
     }
-    .page::before{content:"";position:fixed;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.28) 1px,transparent 1.5px);background-size:95px 95px;opacity:.12;animation:stars 18s linear infinite}
-    @keyframes stars{to{transform:translate(-95px,95px)}}
-    .mock-window{
-      position:relative;width:min(1120px,100%);min-height:620px;border-radius:34px;background:rgba(12,18,34,.76);
-      border:1px solid rgba(255,255,255,.14);box-shadow:0 40px 100px rgba(0,0,0,.55),0 0 80px rgba(107,77,255,.22);overflow:hidden;backdrop-filter:blur(18px)
+    
+    /* Ambient Glows for Background Depth */
+    .bg-glow-left {
+      position: fixed;
+      left: -8%;
+      top: 15%;
+      width: 45vw;
+      height: 45vw;
+      background: radial-gradient(circle, rgba(107,77,255,0.28) 0%, transparent 65%);
+      filter: blur(50px);
+      pointer-events: none;
+      z-index: -1;
+      animation: pulseGlow 8s ease-in-out infinite;
     }
-    .nav{height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 34px;border-bottom:1px solid rgba(255,255,255,.08)}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:-.03em}.brand img{height:44px;max-width:180px;object-fit:contain}.brand-fallback{display:flex;align-items:center;gap:10px}.mark{display:grid;place-items:center;width:40px;height:40px;border-radius:14px;background:linear-gradient(135deg,var(--blue),var(--magenta));box-shadow:0 0 26px rgba(61,99,255,.55);font-weight:900}.nav-links{display:flex;gap:26px;color:#CED6F2;font-size:13px;font-weight:700}.nav-links a{color:inherit;text-decoration:none}.nav-cta{padding:12px 20px;border-radius:999px;background:var(--teal);color:#061014;text-decoration:none;font-weight:900;font-size:13px}
-    .hero{display:grid;grid-template-columns:0.85fr 1.15fr;min-height:546px}
-    .left{padding:48px 48px 44px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(180deg,rgba(8,12,24,.82),rgba(12,18,34,.58));border-right:1px solid rgba(255,255,255,.08)}
-    .kicker{display:inline-flex;align-items:center;gap:9px;width:max-content;padding:9px 13px;border-radius:999px;background:rgba(107,77,255,.16);border:1px solid rgba(107,77,255,.38);color:#D8D7FF;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.kicker::before{content:"✦";color:var(--yellow)}
-    h1{font-size:clamp(46px,7vw,82px);line-height:.91;letter-spacing:-.085em;font-weight:900;margin:26px 0 18px}.gradient-text{background:linear-gradient(90deg,#fff,#AFC1FF 45%,#21D4C2);-webkit-background-clip:text;background-clip:text;color:transparent}.subtitle{max-width:420px;color:var(--muted);font-size:17px;line-height:1.55}.buttons{display:grid;gap:14px;margin-top:34px}.btn{height:60px;border-radius:20px;display:flex;align-items:center;justify-content:center;gap:14px;text-decoration:none;font-weight:900;transition:.25s}.primary{background:linear-gradient(105deg,#0AA8FF,var(--violet),#B822FF);color:white;box-shadow:0 20px 50px rgba(61,99,255,.34);position:relative;overflow:hidden}.primary::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.23),transparent);transform:translateX(-120%);animation:sheen 3.2s ease-in-out infinite}@keyframes sheen{40%{transform:translateX(-120%)}75%,100%{transform:translateX(120%)}}.secondary{border:1px solid rgba(255,255,255,.18);color:white;background:rgba(255,255,255,.035)}.mini-link{text-align:center;color:#C8D0ED;text-decoration:none;font-weight:800;font-size:14px}.mini-link span{color:var(--violet)}
-    .right{position:relative;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 48% 46%,rgba(107,77,255,.36),transparent 30%)}
-    .wave{position:absolute;width:520px;height:240px;border-radius:50%;background:linear-gradient(90deg,var(--magenta),var(--violet),var(--teal));filter:blur(22px);opacity:.48;transform:rotate(-18deg);animation:wave 5s ease-in-out infinite}@keyframes wave{50%{transform:rotate(-8deg) translateY(-14px) scale(1.05)}}
-    .portal{position:absolute;right:92px;top:84px;width:190px;height:190px;border-radius:50%;background:conic-gradient(from 30deg,var(--blue),var(--violet),var(--magenta),var(--blue));box-shadow:0 0 70px rgba(61,99,255,.75);animation:pulse 2.8s ease-in-out infinite}.portal::before{content:"";position:absolute;inset:24px;border-radius:50%;background:#080B18;border:1px solid rgba(255,255,255,.18);box-shadow:inset 0 0 35px rgba(107,77,255,.5)}@keyframes pulse{50%{transform:scale(1.05);filter:saturate(1.4)}}
-    .path{position:absolute;bottom:60px;left:62px;right:74px;height:260px;border-bottom:3px solid rgba(61,99,255,.24);border-radius:50%;transform:rotate(-15deg)}
-    .tile{position:absolute;width:118px;height:78px;border-radius:26px;display:grid;place-items:center;font-size:32px;box-shadow:0 26px 45px rgba(0,0,0,.45);transform:rotateX(58deg) rotateZ(-10deg);animation:float 4s ease-in-out infinite}.tile:nth-child(1){left:80px;bottom:92px;background:linear-gradient(135deg,var(--teal),#2579FF)}.tile:nth-child(2){left:210px;bottom:160px;background:linear-gradient(135deg,var(--violet),#5617D8);animation-delay:.4s}.tile:nth-child(3){left:350px;bottom:230px;background:linear-gradient(135deg,var(--magenta),#FF5B73);animation-delay:.8s}.tile:nth-child(4){right:150px;top:178px;background:linear-gradient(135deg,var(--yellow),#FF8A3D);animation-delay:1.2s}.tile:nth-child(5){right:92px;top:112px;width:96px;height:64px;background:linear-gradient(135deg,var(--green),var(--teal));animation-delay:1.6s}@keyframes float{50%{translate:0 -12px}}
-    .screen-label{position:absolute;right:70px;bottom:64px;padding:18px 20px;border-radius:22px;background:rgba(5,8,22,.52);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(12px);font-weight:900;line-height:1.25;color:#fff}.screen-label span{display:block;color:var(--teal)}
-    @media (max-width:850px){body{overflow:auto}.page{padding:14px;align-items:start}.mock-window{min-height:auto;border-radius:28px}.nav{padding:0 20px}.nav-links{display:none}.hero{grid-template-columns:1fr}.left{order:2;border-right:none;padding:30px 22px}.right{min-height:420px}.portal{right:40px;top:34px}.tile:nth-child(1){left:26px}.tile:nth-child(2){left:116px}.tile:nth-child(3){left:210px}.tile:nth-child(4){right:66px}.screen-label{display:none}h1{font-size:52px}}
+
+    .bg-glow-right {
+      position: fixed;
+      right: -8%;
+      bottom: 10%;
+      width: 50vw;
+      height: 50vw;
+      background: radial-gradient(circle, rgba(255,79,203,0.22) 0%, transparent 65%);
+      filter: blur(60px);
+      pointer-events: none;
+      z-index: -1;
+      animation: pulseGlow 10s ease-in-out infinite reverse;
+    }
+
+    @keyframes pulseGlow {
+      50% { transform: translateY(20px) scale(1.05); opacity: 0.8; }
+    }
+    
+    .page::before {
+      content: ""; 
+      position: fixed; 
+      inset: 0; 
+      background-image: radial-gradient(circle,rgba(255,255,255,.28) 1px,transparent 1.5px); 
+      background-size: 95px 95px; 
+      opacity: .08; 
+      animation: stars 18s linear infinite;
+      pointer-events: none;
+      z-index: -1;
+    }
+    
+    @keyframes stars { to { transform: translate(-95px, 95px); } }
+    
+    .mock-window {
+      position: relative; 
+      width: min(1120px, 100%); 
+      min-height: 620px; 
+      border-radius: 34px; 
+      background: rgba(12,18,34,.76);
+      border: 1px solid rgba(255,255,255,.14); 
+      box-shadow: 0 40px 100px rgba(0,0,0,.6), 0 0 80px rgba(107,77,255,.15); 
+      overflow: hidden; 
+      backdrop-filter: blur(18px);
+    }
+    
+    .nav { 
+      height: 74px; 
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between; 
+      padding: 0 34px; 
+      border-bottom: 1px solid rgba(255,255,255,.08); 
+    }
+    
+    .brand { 
+      display: flex; 
+      align-items: center; 
+      gap: 12px; 
+      font-weight: 900; 
+      letter-spacing: -.03em; 
+    }
+    .brand img { height: 44px; max-width: 180px; object-fit: contain; }
+    .brand-fallback { display: flex; align-items: center; gap: 10px; }
+    
+    .mark { 
+      display: grid; 
+      place-items: center; 
+      width: 40px; 
+      height: 40px; 
+      border-radius: 14px; 
+      background: linear-gradient(135deg,var(--blue),var(--magenta)); 
+      box-shadow: 0 0 26px rgba(61,99,255,.55); 
+      font-weight: 900; 
+    }
+    
+    .nav-cta { 
+      padding: 12px 24px; 
+      border-radius: 999px; 
+      background: var(--teal); 
+      color: #061014; 
+      text-decoration: none; 
+      font-weight: 900; 
+      font-size: 13px; 
+      transition: transform 0.2s;
+    }
+    .nav-cta:hover { transform: scale(1.05); }
+    
+    .hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 546px; }
+    
+    .left { 
+      padding: 48px; 
+      display: flex; 
+      flex-direction: column; 
+      justify-content: center; 
+      background: linear-gradient(180deg,rgba(8,12,24,.82),rgba(12,18,34,.58)); 
+      border-right: 1px solid rgba(255,255,255,.08); 
+    }
+    
+    .kicker { 
+      display: inline-flex; 
+      align-items: center; 
+      gap: 9px; 
+      width: max-content; 
+      padding: 9px 13px; 
+      border-radius: 999px; 
+      background: rgba(107,77,255,.16); 
+      border: 1px solid rgba(107,77,255,.38); 
+      color: #D8D7FF; 
+      font-size: 12px; 
+      font-weight: 800; 
+      text-transform: uppercase; 
+      letter-spacing: .08em; 
+    }
+    .kicker::before { content: "✦"; color: var(--yellow); }
+    
+    h1 { font-size: clamp(36px, 5vw, 58px); line-height: 1.02; letter-spacing: -.05em; font-weight: 900; margin: 22px 0 18px; }
+    .gradient-text { background: linear-gradient(90deg, #fff, #AFC1FF 45%, var(--teal)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    
+    .subtitle { max-width: 440px; color: var(--muted); font-size: 17px; line-height: 1.6; margin-bottom: 8px; font-weight: 500; }
+    .subtitle span { display: block; color: #fff; font-weight: 700; margin-bottom: 6px; }
+    
+    .buttons { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
+    .btn { height: 56px; padding: 0 28px; border-radius: 18px; display: inline-flex; align-items: center; justify-content: center; gap: 12px; text-decoration: none; font-weight: 900; transition: .25s; flex: 1; min-width: 150px; }
+    
+    .primary { background: linear-gradient(105deg,#0AA8FF,var(--violet),#B822FF); color: white; box-shadow: 0 20px 50px rgba(61,99,255,.34); position: relative; overflow: hidden; }
+    .primary::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg,transparent,rgba(255,255,255,.23),transparent); transform: translateX(-120%); animation: sheen 3.2s ease-in-out infinite; }
+    
+    @keyframes sheen { 40% { transform: translateX(-120%) } 75%,100% { transform: translateX(120%) } }
+    
+    .secondary { border: 1px solid rgba(255,255,255,.18); color: white; background: rgba(255,255,255,.035); }
+    .secondary:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,0.3); }
+    
+    .mini-link { width: 100%; text-align: left; color: #C8D0ED; text-decoration: none; font-weight: 800; font-size: 14px; margin-top: 16px; display: flex; align-items: center; gap: 6px; }
+    .mini-link span { color: var(--violet); transition: transform 0.2s; }
+    .mini-link:hover span { transform: translateX(3px); }
+    
+    .right { position: relative; display: grid; place-items: center; overflow: hidden; background: radial-gradient(circle at 48% 46%,rgba(107,77,255,.36),transparent 30%); }
+    
+    .wave { position: absolute; width: 520px; height: 240px; border-radius: 50%; background: linear-gradient(90deg,var(--magenta),var(--violet),var(--teal)); filter: blur(22px); opacity: .48; transform: rotate(-18deg); animation: wave 5s ease-in-out infinite; }
+    @keyframes wave { 50% { transform: rotate(-8deg) translateY(-14px) scale(1.05); } }
+    
+    .portal { position: absolute; right: 40px; top: 60px; width: 170px; height: 170px; border-radius: 50%; background: conic-gradient(from 30deg,var(--blue),var(--violet),var(--magenta),var(--blue)); box-shadow: 0 0 70px rgba(61,99,255,.6); animation: pulse 2.8s ease-in-out infinite; }
+    .portal::before { content: ""; position: absolute; inset: 20px; border-radius: 50%; background: #080B18; border: 1px solid rgba(255,255,255,.18); box-shadow: inset 0 0 35px rgba(107,77,255,.5); }
+    @keyframes pulse { 50% { transform: scale(1.05); filter: saturate(1.4); } }
+    
+    .path { position: absolute; bottom: 50px; left: 40px; right: 40px; height: 260px; border-bottom: 3px solid rgba(61,99,255,.2); border-radius: 50%; transform: rotate(-12deg); }
+    
+    .tile { position: absolute; width: 105px; height: 72px; border-radius: 24px; display: grid; place-items: center; box-shadow: 0 20px 40px rgba(0,0,0,.5); transform: rotateX(55deg) rotateZ(-8deg); animation: float 4s ease-in-out infinite; }
+    .tile img { width: 42px; height: 42px; object-fit: contain; }
+    .tile-fallback { display: none; font-weight: 900; font-size: 22px; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+
+    .tile:nth-child(1) { left: 25px; bottom: 55px; background: linear-gradient(135deg,var(--teal),#2579FF); }
+    .tile:nth-child(2) { left: 130px; bottom: 115px; background: linear-gradient(135deg,var(--violet),#5617D8); animation-delay: .4s; }
+    .tile:nth-child(3) { left: 235px; bottom: 175px; background: linear-gradient(135deg,var(--magenta),#FF5B73); animation-delay: .8s; }
+    .tile:nth-child(4) { left: 340px; bottom: 235px; background: linear-gradient(135deg,var(--yellow),#FF8A3D); animation-delay: 1.2s; }
+    .tile:nth-child(5) { left: 445px; bottom: 295px; background: linear-gradient(135deg,var(--green),var(--teal)); animation-delay: 1.6s; }
+    
+    @keyframes float { 50% { translate: 0 -10px; } }
+    
+    .screen-label { position: absolute; right: 40px; bottom: 40px; padding: 14px 18px; border-radius: 20px; background: rgba(5,8,22,.65); border: 1px solid rgba(255,255,255,.12); backdrop-filter: blur(12px); font-weight: 800; font-size: 13px; line-height: 1.3; color: #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+    .screen-label span { display: block; font-weight: 500; font-size: 11px; color: var(--teal); margin-top: 2px; }
+    
+    @media (max-width: 850px) {
+      .page { padding: 14px; align-items: start; }
+      .mock-window { min-height: auto; border-radius: 28px; }
+      .nav { padding: 0 20px; }
+      .hero { grid-template-columns: 1fr; }
+      
+      .left { order: 1; border-right: none; padding: 40px 24px; border-bottom: 1px solid rgba(255,255,255,.08); }
+      .right { order: 2; min-height: 380px; }
+      
+      .portal { right: 30px; top: 30px; width: 130px; height: 130px; }
+      .tile { width: 85px; height: 58px; }
+      .tile img { max-width: 30px !important; max-height: 30px !important; }
+      .tile-fallback { font-size: 18px; }
+      
+      .tile:nth-child(1) { left: 15px; bottom: 45px; }
+      .tile:nth-child(2) { left: 100px; bottom: 95px; }
+      .tile:nth-child(3) { left: 185px; bottom: 145px; }
+      .tile:nth-child(4) { left: 265px; bottom: 195px; }
+      .tile:nth-child(5) { left: 345px; bottom: 240px; }
+      
+      .screen-label { left: 20px; right: auto; bottom: 20px; }
+      h1 { font-size: 38px; }
+      .buttons { flex-direction: column; }
+      .btn { width: 100%; }
+    }
   </style>
 </head>
 <body>
+  <div class="bg-glow-left"></div>
+  <div class="bg-glow-right"></div>
+
   <main class="page">
     <section class="mock-window">
       <nav class="nav">
         <div class="brand">
-          <img src="assets/brand/logo-full.png" alt="Smart DT Guide" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <img src="assets/brand/logo-full.png" alt="Full Smart DT Guide Logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
           <span class="brand-fallback" style="display:none"><span class="mark">DT</span> Smart DT Guide</span>
         </div>
-        <div class="nav-links"><a href="intro-dt.html">Introduction</a><a href="login.html">Login</a><a href="registration.html">Register</a></div>
         <a class="nav-cta" href="registration.html">Start</a>
       </nav>
+      
       <div class="hero">
         <section class="left">
           <div>
-            <div class="kicker">CAMP21 Design Thinking Space</div>
-            <h1>Enter the <span class="gradient-text">DT Journey</span></h1>
-            <p class="subtitle">A guided digital workspace for teams to observe, define, ideate, prototype and test with confidence.</p>
+            <div class="kicker">Smart DT Guide</div>
+            
+            <h1>Step Into Your <span class="gradient-text">Design Thinking Journey</span></h1>
+            
+            <p class="subtitle">
+              <span>Observe. Define. Create. Test.</span>
+              All in one guided workspace.
+            </p>
+            
             <div class="buttons">
               <a class="btn primary" href="registration.html">Get Started <span>→</span></a>
               <a class="btn secondary" href="login.html">Log In</a>
-              <a class="mini-link" href="intro-dt.html"><span>▷</span> Introduction</a>
+              <a class="mini-link" href="intro-dt.html"><span>▷</span> Watch Introduction</a>
             </div>
           </div>
         </section>
+        
         <section class="right" aria-hidden="true">
-          <div class="wave"></div><div class="portal"></div><div class="path"></div>
-          <div class="tile">♡</div><div class="tile">⌕</div><div class="tile">💡</div><div class="tile">▱</div><div class="tile">✓</div>
-          <div class="screen-label">Design<br><span>Think</span>Create<br><span>Impact</span></div>
+          <div class="wave"></div>
+          <div class="portal"></div>
+          <div class="path"></div>
+          
+          <div class="tile">
+            <img src="assets/phases/empathize.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+            <span class="tile-fallback">1</span>
+          </div>
+          <div class="tile">
+            <img src="assets/phases/define.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+            <span class="tile-fallback">2</span>
+          </div>
+          <div class="tile">
+            <img src="assets/phases/ideate.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+            <span class="tile-fallback">3</span>
+          </div>
+          <div class="tile">
+            <img src="assets/phases/prototype.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+            <span class="tile-fallback">4</span>
+          </div>
+          <div class="tile">
+            <img src="assets/phases/test.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+            <span class="tile-fallback">5</span>
+          </div>
+          
+          <div class="screen-label">
+            Design Thinking Workspace
+            <span>v2.0 Enabled</span>
+          </div>
         </section>
       </div>
     </section>
