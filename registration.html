@@ -1,38 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register | Smart DT Guide</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register | Smart DT Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#070B14;--panel:#111827;--text:#F8FAFF;--muted:#AEB7D0;--blue:#3D63FF;--violet:#6B4DFF;--magenta:#FF4FCB;--teal:#21D4C2;--yellow:#FFC83D;--green:#8DFF3F;--line:rgba(255,255,255,.12)}
+    *{box-sizing:border-box;margin:0;padding:0}body{min-height:100vh;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);overflow:hidden}.page{min-height:100vh;display:grid;place-items:center;padding:28px;background:radial-gradient(circle at 14% 20%,rgba(255,79,203,.34),transparent 28%),radial-gradient(circle at 84% 20%,rgba(61,99,255,.28),transparent 34%),linear-gradient(135deg,#050816,#0D1024 50%,#180929)}.auth-window{width:min(1060px,100%);min-height:620px;border-radius:34px;background:rgba(12,18,34,.82);border:1px solid rgba(255,255,255,.14);box-shadow:0 40px 100px rgba(0,0,0,.55),0 0 80px rgba(255,79,203,.18);overflow:hidden;display:grid;grid-template-columns:.82fr 1.18fr;backdrop-filter:blur(18px)}.form-side{padding:44px 44px 38px;background:rgba(5,8,22,.55);border-right:1px solid rgba(255,255,255,.08)}.brand{display:flex;align-items:center;gap:12px;margin-bottom:38px}.brand img{height:50px;max-width:205px;object-fit:contain}.mark{display:grid;place-items:center;width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--blue),var(--magenta));font-weight:900;box-shadow:0 0 26px rgba(61,99,255,.55)}.icon-orb{width:78px;height:78px;border-radius:50%;display:grid;place-items:center;margin:0 auto 26px;background:linear-gradient(135deg,rgba(33,212,194,.2),rgba(107,77,255,.18));border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 0 30px rgba(61,99,255,.22);font-size:36px}h1{font-size:36px;line-height:1.05;letter-spacing:-.055em;font-weight:900;text-align:center;margin-bottom:10px}.sub{text-align:center;color:var(--muted);font-size:14px;line-height:1.5;margin-bottom:28px}.form{display:grid;gap:14px}.field{position:relative}.field label{display:block;font-size:12px;color:#C8D0ED;font-weight:800;margin-bottom:8px;text-transform:uppercase;letter-spacing:.07em}.field input,.field select{width:100%;height:52px;border-radius:16px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.055);color:var(--text);padding:0 16px;font:600 14px Inter;outline:none;transition:.25s}.field input::placeholder{color:rgba(174,183,208,.45)}.field input:focus,.field select:focus{border-color:var(--teal);box-shadow:0 0 0 4px rgba(33,212,194,.10)}select option{background:#101722;color:white}.btn{height:58px;border:0;border-radius:18px;font-weight:900;font-size:16px;color:white;background:linear-gradient(105deg,#0AA8FF,var(--violet),#B822FF);box-shadow:0 18px 44px rgba(61,99,255,.33);cursor:pointer;margin-top:8px}.footer{margin-top:22px;text-align:center;color:var(--muted);font-size:14px}.footer a{color:var(--teal);font-weight:900;text-decoration:none}.visual-side{position:relative;display:flex;flex-direction:column;justify-content:center;padding:54px 62px;overflow:hidden;background:radial-gradient(circle at 48% 43%,rgba(107,77,255,.34),transparent 34%)}.visual-side::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.22) 1px,transparent 1.5px);background-size:95px 95px;opacity:.10;animation:stars 18s linear infinite}@keyframes stars{to{transform:translate(-95px,95px)}}.wave{position:absolute;width:560px;height:230px;border-radius:50%;background:linear-gradient(90deg,var(--magenta),var(--violet),var(--teal));filter:blur(24px);opacity:.5;transform:rotate(-18deg);animation:wave 5s ease-in-out infinite}@keyframes wave{50%{transform:rotate(-8deg) translateY(-14px) scale(1.04)}}.copy{position:relative;z-index:2;max-width:460px;margin-left:auto}.kicker{color:var(--teal);font-size:13px;font-weight:900;letter-spacing:.09em;text-transform:uppercase;margin-bottom:18px}.copy h2{font-size:60px;line-height:.95;letter-spacing:-.075em;font-weight:900;margin-bottom:18px}.copy p{color:#D2D9F2;font-size:17px;line-height:1.55}.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}.chip{padding:10px 13px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);font-size:12px;font-weight:800}.chip:nth-child(1){color:var(--teal)}.chip:nth-child(2){color:var(--magenta)}.chip:nth-child(3){color:var(--yellow)}.chip:nth-child(4){color:var(--green)}.floating-card{position:absolute;right:70px;bottom:62px;width:210px;padding:18px;border-radius:24px;background:rgba(5,8,22,.54);border:1px solid rgba(255,255,255,.13);box-shadow:0 24px 50px rgba(0,0,0,.38);backdrop-filter:blur(14px)}.mini-progress{height:8px;border-radius:99px;background:rgba(255,255,255,.12);overflow:hidden;margin-top:14px}.mini-progress span{display:block;width:60%;height:100%;background:linear-gradient(90deg,var(--teal),var(--blue));border-radius:inherit}.back{position:absolute;left:24px;top:22px;color:#CBD3EF;text-decoration:none;font-weight:800;font-size:13px}
+    @media(max-width:850px){body{overflow:auto}.page{padding:14px;align-items:start}.auth-window{grid-template-columns:1fr;min-height:auto}.visual-side{order:-1;min-height:300px;padding:34px 24px}.form-side{padding:30px 22px;border-right:0}.copy{margin:0}.copy h2{font-size:44px}.floating-card{display:none}.brand{margin-bottom:24px}.wave{width:360px}}
+  </style>
 </head>
 <body>
-    <div class="auth-wrapper">
-        <div class="auth-card">
-            <div class="auth-logo">DT</div>
-            <h2>Join the Sprint</h2>
-            <p class="subtitle">Create your CAMP21 workspace</p>
-            <form action="dashboard.html" method="GET">
-                <div class="form-group">
-                    <label>Full Name</label>
-                    <input type="text" class="form-control" placeholder="e.g. Ahmad bin Ali" required>
-                </div>
-                <div class="form-group">
-                    <label>Team Name</label>
-                    <input type="text" class="form-control" placeholder="e.g. Team Innovatex">
-                </div>
-                <div class="form-group">
-                    <label>Student Email</label>
-                    <input type="email" class="form-control" placeholder="name@polipd.edu.my" required>
-                </div>
-                <div class="form-group">
-                    <label>Password</label>
-                    <input type="password" class="form-control" placeholder="••••••••" required>
-                </div>
-                <button type="submit" class="btn-submit">Create Account</button>
-            </form>
-            <div class="auth-footer">Already registered? <a href="login.html">Log In</a></div>
+  <main class="page">
+    <section class="auth-window">
+      <section class="form-side">
+        <div class="brand">
+          <img src="assets/brand/logo-full.png" alt="Smart DT Guide" onerror="this.style.display='none';this.nextElementSibling.style.display='grid';">
+          <span class="mark" style="display:none">DT</span>
         </div>
-    </div>
+        <div class="icon-orb">✦</div>
+        <h1>Create Your Space</h1>
+        <p class="sub">Register your CAMP21 team and begin the Smart DT journey.</p>
+        <form class="form" action="dashboard.html" method="GET">
+          <div class="field"><label>Full Name</label><input required type="text" placeholder="e.g. Julie Marlina"></div>
+          <div class="field"><label>Email</label><input required type="email" placeholder="name@example.com"></div>
+          <div class="field"><label>Team Name</label><input required type="text" placeholder="e.g. Team InnovateX"></div>
+          <div class="field"><label>Role</label><select required><option value="">Choose your role</option><option>Participant</option><option>Facilitator</option><option>Trainer</option><option>Judge</option></select></div>
+          <div class="field"><label>Password</label><input required type="password" placeholder="••••••••"></div>
+          <button class="btn" type="submit">Create Account →</button>
+        </form>
+        <div class="footer">Already registered? <a href="login.html">Log In</a></div>
+      </section>
+      <section class="visual-side">
+        <a class="back" href="index.html">← Welcome</a>
+        <div class="wave"></div>
+        <div class="copy">
+          <div class="kicker">Smart DT Workspace</div>
+          <h2>Build. Test. Pitch.</h2>
+          <p>One guided space for templates, evidence, phase progress and team submissions.</p>
+          <div class="chips"><span class="chip">Empathise</span><span class="chip">Ideate</span><span class="chip">Prototype</span><span class="chip">Test</span></div>
+        </div>
+        <div class="floating-card">
+          <strong>Phase 01</strong><br><span style="color:#AEB7D0;font-size:13px">Empathise ready</span><div class="mini-progress"><span></span></div>
+        </div>
+      </section>
+    </section>
+  </main>
 </body>
 </html>

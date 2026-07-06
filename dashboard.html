@@ -11,7 +11,9 @@
 
     <aside class="sidebar">
         <div>
-            <div class="sidebar-logo"><img src="assets/brand/logo-full.png" alt="Smart DT Guide" onerror="this.style.display='none'"></div>
+            <div class="sidebar-logo">
+                <img src="assets/brand/logo-full.png" alt="Smart DT Guide">
+            </div>
             <ul class="sidebar-nav">
                 <li class="active"><a href="dashboard.html"><img src="assets/navigation/nav-home.png" alt=""> Dashboard</a></li>
                 <li><a href="#"><img src="assets/navigation/nav-journey.png" alt=""> DT Journey</a></li>
@@ -24,18 +26,18 @@
 
     <main class="main">
 
-        <!-- Top Bar (mobile feel) -->
+        <!-- Top Bar -->
         <div class="top-bar">
             <div class="top-bar-brand">
-                <div class="top-bar-logo">DT</div>
+                <img src="assets/brand/logo.png" alt="DT" class="top-bar-logo">
                 <h2>Smart DT Guide</h2>
             </div>
-            <span style="font-size:20px;opacity:.5;">🔔</span>
+            <span class="top-bar-bell">🔔</span>
         </div>
 
-        <!-- Phase Hero Card -->
+        <!-- Phase Hero -->
         <div class="phase-hero">
-            <img src="assets/phases/emphatise.png" alt="" class="phase-icon-float" onerror="this.style.display='none'">
+            <img src="assets/phases/emphatise.png" alt="Empathise" class="phase-icon-float">
             <span class="label">Current phase</span>
             <h2>Phase 01<br>Empathise</h2>
             <div class="pct">60% complete</div>
@@ -45,27 +47,27 @@
             </button>
         </div>
 
-        <!-- Quick Actions -->
+        <!-- Quick Actions — SOLID colors, using custom icons -->
         <div class="qa-grid">
-            <a href="#" class="qa-btn" style="background:var(--qa-green);">
-                <span class="qa-left"><img src="assets/icons/my-submissions.png" alt="" onerror="this.style.display='none'"> My Submissions</span>
+            <a href="#" class="qa-btn qa-solid-green">
+                <span class="qa-left"><img src="assets/icons/my-submissions.png" alt=""> My Submissions</span>
                 <span class="qa-arrow">→</span>
             </a>
-            <a href="#" class="qa-btn qa-glass">
-                <span class="qa-left"><img src="assets/icons/test.png" alt="" onerror="this.style.display='none'"> Quiz</span>
+            <a href="#" class="qa-btn qa-solid-dark">
+                <span class="qa-left"><img src="assets/icons/test.png" alt=""> Quiz</span>
                 <span class="qa-arrow">→</span>
             </a>
-            <a href="#" class="qa-btn" style="background:var(--qa-teal);">
-                <span class="qa-left"><img src="assets/icons/badges.png" alt="" onerror="this.style.display='none'"> Badges</span>
+            <a href="#" class="qa-btn qa-solid-teal">
+                <span class="qa-left"><img src="assets/icons/badges.png" alt=""> Badges</span>
                 <span class="qa-arrow">→</span>
             </a>
-            <a href="#" class="qa-btn qa-glass">
-                <span class="qa-left"><img src="assets/icons/print-pdf.png" alt="" onerror="this.style.display='none'"> Print PDF</span>
+            <a href="#" class="qa-btn qa-solid-dark">
+                <span class="qa-left"><img src="assets/icons/print-pdf.png" alt=""> Print PDF</span>
                 <span class="qa-arrow">→</span>
             </a>
         </div>
 
-        <!-- Templates -->
+        <!-- Templates — SOLID dark cards -->
         <div class="section-label">Templates <a href="#">View all →</a></div>
 
         <a href="#" class="tpl-item">
@@ -93,7 +95,28 @@
             <span class="tpl-arrow">›</span>
         </a>
 
-        <!-- Bottom Nav -->
+        <!-- Journey Tracker -->
+        <div class="section-label">Sprint progress</div>
+        <div class="journey-card">
+            <div class="journey-row">
+                <div class="j-node"><div class="j-circle active">01</div><div class="j-label">Empathise</div></div>
+                <div class="j-node"><div class="j-circle">02</div><div class="j-label">Define</div></div>
+                <div class="j-node"><div class="j-circle">03</div><div class="j-label">Ideate</div></div>
+                <div class="j-node"><div class="j-circle">04</div><div class="j-label">Prototype</div></div>
+                <div class="j-node"><div class="j-circle">05</div><div class="j-label">Test</div></div>
+                <div class="j-node"><div class="j-circle" style="font-size:11px;">P</div><div class="j-label">Pitch</div></div>
+            </div>
+        </div>
+
+        <!-- AI Buddy -->
+        <div class="buddy-card">
+            <img src="assets/status/ai-dt.png" alt="AI Buddy">
+            <div>
+                <h4>AI DT Buddy ✨</h4>
+                <p>Complete Empathise templates to unlock AI-powered insights.</p>
+            </div>
+        </div>
+
     </main>
 
     <nav class="mobile-nav">
@@ -104,7 +127,6 @@
     </nav>
 
 </div>
-
 <script src="js/smartdt.js"></script>
 </body>
 </html>
